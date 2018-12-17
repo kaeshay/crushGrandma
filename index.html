@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>i have a crush and my grandma died</title>
-    <meta name="description" content="replaying rachel">
+    <title>I have a crush and my grandma died</title>
+    <meta name="description" content="sleepovers">
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script src="components/grab.js"></script>
     <script src="components/aabb-collider.js"></script>
@@ -11,68 +11,8 @@
     <script src="https://unpkg.com/aframe-joysticks-movement-component@0.1.2/dist/aframe-joysticks-movement-component.js"></script>
   </head>
   <body>
-    <a-scene avatar-recorder 
-             avatar-replayer="loop:true; src: https://cdn.glitch.com/6c164a03-835c-46c1-b58d-0436edb7bcc5%2Frachel-take1.json?1524688281085; spectatorMode: true; spectatorPosition: 0 1 3"
-             raycaster="far: 100; objects: [link], .portal;" cursor="rayOrigin: mouse" raycaster-check raycaster-helper>
-      <a-assets>
-        <a-asset-item id="rachel-head-gltf" src="assets/rachel/rachel-head.gltf"></a-asset-item>
-        <a-asset-item id="rachel-left-gltf" src="assets/rachel/rachel-left.gltf"></a-asset-item>
-        <a-asset-item id="rachel-right-gltf" src="assets/rachel/rachel-right.gltf"></a-asset-item>
-        <a-asset-item id="barbie-gltf" src="assets/rachel/barbie.gltf"></a-asset-item>
-        <a-asset-item id="ken-gltf" src="assets/rachel/ken.gltf"></a-asset-item>
-        <a-asset-item id="playground-gltf" src="assets/rachel/playground-light.gltf"></a-asset-item>
-        <a-asset-item id="glassdoor-gltf" src="assets/rachel/glass-door.gltf"></a-asset-item>
-        <a-asset-item id="glassdoor-obj" src="assets/rachel/glass-door.obj"></a-asset-item>
-        <a-asset-item id="glassdoor-mtl" src="assets/rachel/glass-door.mtl"></a-asset-item>
-        <a-asset-item id="glassdoor2-mtl" src="assets/rachel/glass-door2.mtl"></a-asset-item>
-      </a-assets>
-        
-      <a-link href="chloe.html" position="-3 -1 -4.5" rotation="0 90 0" scale="2 2 2" visible="false"></a-link>
-        
-      <a-entity id="avatarRachel">
-        <a-camera />
-        <a-entity id="rachel-head" 
-                    gltf-model="#rachel-head-gltf"
-                    position="0.44 3 -2" rotation="-40 90 0" scale="0.03 0.03 0.03"
-                    sound="src: /assets/rachel/rachel.WAV; autoplay: true; refDistance: 3"></a-entity>
-        <a-entity id="leftHand" custom-controls="hand: right; model: #rachel-right-gltf" 
-                  aabb-collider="objects: .grabbable" grab 
-                  position="1.09 0.09 -4.124" rotation="-90 -90 0" scale="0.03 0.03 0.03"></a-entity>
-        <a-entity id="rightHand" custom-controls="hand: left; model: #rachel-left-gltf" 
-                  aabb-collider="objects: .grabbable" grab
-                  position="-1.5 -0.5 -4" rotation="-90 -90 0"  scale="0.03 0.03 0.03"></a-entity>
-      </a-entity>
-      
-      <a-entity id="barbie" class="grabbable"
-                gltf-model="#barbie-gltf"
-                position="0 1.9 -4" 
-                rotation="-15 0 0" 
-                scale="0.05 0.05 0.05"> 
-        <a-animation attribute="position" from="0 1.9 -4" to="1 1 -4 " dur="700" direction="alternate" repeat="indefinite"></a-animation>
-        <a-animation attribute="rotation" to="90 180 0 " dur="1000" direction="alternate" repeat="indefinite"></a-animation>
-        <a-animation attribute="position" delay="15000" from="0 1.9 -4" to="20 1 -4 " dur="700"></a-animation>
-      </a-entity>
-
-      <a-entity id="ken" class="grabbable"
-                gltf-model="#ken-gltf"
-                position="1 -2.4 -3" 
-                rotation="0 90 180" 
-                scale="0.04 0.04 0.04"> 
-        <a-animation attribute="position" from="1 -2.4 -3" to="1 -3 -5 " dur="500" direction="alternate" repeat="indefinite"></a-animation>
-      </a-entity>
-      
-      <a-entity id="glass-door" class=".portal" obj-model="obj: #glassdoor-obj; mtl: #glassdoor-mtl" position="-4 2 -3" rotation="-40 60 40" scale="0.09 0.09 0.09" intersect-color-change>
-         <a-animation attribute="position" from="-4 2 -3" to="-4 2 0" delay="10000" dur="5000" direction="alternate" repeat="indefinite"></a-animation>
-      </a-entity>
-      
-      
-      <a-entity id="playground" 
-                gltf-model="#playground-gltf"
-               position="-4 2 -3" rotation="-40 60 40" scale="0.09 0.09 0.09"></a-entity>
-      
-      <a-light type="ambient" color="#FFFFFF" intesity="1.7"></a-light>
-      <a-light position="8.403 28.865 -20" color="#d6e5ff"></a-light>
-      <a-sky color="#d1badb"></a-sky>
-    </a-scene>
+      <a-scene raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse" camera-position>
+          <a-link href="scenes/rachel.html" position="-3 -1 -4.5" rotation="0 90 0" scale="2 2 2"></a-link>
+      </a-scene>
   </body>
 </html>

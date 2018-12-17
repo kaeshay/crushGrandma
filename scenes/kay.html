@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kay</title>
+    <meta name="description" content="replaying kay">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="/components/grab.js"></script>
+    <script src="/components/aabb-collider.js"></script>
+    <script src="/components/custom-controls.js"></script>
+    <script src="/components/motion-capture.js"></script>
+    <script src="https://unpkg.com/aframe-joysticks-movement-component@0.1.2/dist/aframe-joysticks-movement-component.js"></script>
+  </head>
+  <body>
+    <a-scene avatar-replayer="loop:true; src: https://cdn.glitch.com/4b8385fc-32ed-4da6-8377-ebc619b4fc8a%2Fkay-take-3.json?1523768774142; spectatorMode: true; spectatorPosition: 0 1 3" raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse">
+      <a-assets>
+        <a-asset-item id="kay-head-gltf" src="/assets/kay/kay-head.gltf"></a-asset-item>
+        <a-asset-item id="kay-left-gltf" src="/assets/kay/kay-left.gltf"></a-asset-item>
+        <a-asset-item id="kay-right-gltf" src="/assets/kay/kay-right.gltf"></a-asset-item>
+        <a-asset-item id="phone-obj" src="/assets/kay/phone/kay-phone.obj"></a-asset-item>
+        <a-asset-item id="phone-mtl" src="/assets/kay/phone/kay-phone.mtl"></a-asset-item>
+        <a-asset-item id="bed-gltf" src="/assets/kay/bed.gltf"></a-asset-item>
+        <a-asset-item id="chair-gltf" src="/assets/kay/chair.gltf"></a-asset-item>
+        <a-asset-item id="desk-gltf" src="/assets/kay/desk.gltf"></a-asset-item>
+        <a-asset-item id="door-gltf" src="/assets/kay/kay-door.gltf"></a-asset-item>
+        <a-asset-item id="window-obj" src="/assets/kay/window/kay-window.obj"></a-asset-item>
+        <a-asset-item id="window-mtl" src="/assets/kay/window/kay-window.mtl"></a-asset-item>
+      </a-assets>
+        
+      <a-link href="princess.html" position="-4.7 1 8.4" rotation="0 90 0" scale="2 3 2" visible="false"></a-link>
+        
+      <a-entity id="avatar">
+        <a-camera />
+          <a-entity id="kay-head" 
+                    gltf-model="#kay-head-gltf"
+                    position="1.8 -0.1 -2" 
+                    rotation="150 -90 0" 
+                    scale="0.03 0.03 0.03"
+                    sound="src: /assets/kay/kay.m4a; autoplay: true"></a-entity>
+        <a-entity id="rightHand" custom-controls="hand: right; model: #kay-right-gltf" 
+                  aabb-collider="objects: .grabbable;" grab 
+                  rotation="0 0 0" scale="0.01 0.01 0.01"></a-entity>
+        <a-entity id="leftHand" custom-controls="hand: left; model: #kay-left-gltf" 
+                  aabb-collider="objects: .grabbable;" grab
+                  rotation= "30 -90 0" scale="0.01 0.01 0.01"></a-entity>
+      </a-entity>
+      
+      <a-entity id="phone" class="grabbable"
+                obj-model="obj: #phone-obj; mtl: #phone-mtl"
+                position="0 1 -4" 
+                rotation="0 0 0" 
+                scale="0.05 0.05 0.05"
+                sound="src: /assets/kay/michelle.m4a; autoplay: true">
+        <a-light type="point" position="-1.916 -7.523 4.668" intensity="0.3" angle="-60" color="#73fdff">
+          <a-animation attribute="intensity" to="0.4" direction="alternate" dur="500" repeat="indefinite"></a-animation>
+        </a-light> 
+        <a-light type="ambient" position="-1.916 -7.523 18.677" intensity="0.6" angle="-60"></a-light>
+      </a-entity>
+      
+      <a-entity id="bed" 
+                gltf-model="#bed-gltf"
+                position="0 -1 0" 
+                rotation="-120 150 0" 
+                scale="0.07 0.07 0.07"></a-entity>
+          
+      <a-entity id="window" 
+                obj-model="obj: #window-obj; mtl: #window-mtl" 
+                position="0 0 -5.7" 
+                rotation="-100 -3.6 -3.3" 
+                scale="0.07 0.07 0.07"></a-entity>
+
+       <a-entity id="chair" gltf-model="#chair-gltf" position="-11.84 6.4 -9" rotation="-60 39.84 0" scale="0.2 0.2 0.2"></a-entity>
+        
+       <a-entity id="desk" gltf-model="#desk-gltf" position="-5 2 -3" rotation="-70 39.84 0" scale="0.09 0.09 0.09"></a-entity>
+        
+       <a-entity id="door" gltf-model="#door-gltf" position="-17 -6 10" rotation="-130 90 0" scale="0.2 0.2 0.2"></a-entity>
+           
+      <a-sky color="#27292b"></a-sky>
+    </a-scene>
+  </body>
+</html>

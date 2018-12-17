@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Glow Gals</title>
+    <meta name="description" content="replaying glow">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="/components/grab.js"></script>
+    <script src="/components/aabb-collider.js"></script>
+    <script src="/components/custom-controls.js"></script>
+    <script src="/components/motion-capture.js"></script>
+    <script src="https://unpkg.com/aframe-joysticks-movement-component@0.1.2/dist/aframe-joysticks-movement-component.js"></script>
+    <script src="https://unpkg.com/aframe-mirror-component/dist/aframe-mirror-component.min.js"></script> 
+  </head>
+  <body>
+      <a-scene raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse">
+          <a-assets>
+              <!-- cissy-->
+              <a-asset-item id="cissy-head-gltf" src="/assets/glow/cissy-head.gltf"></a-asset-item>
+              <a-asset-item id="cissy-left-gltf" src="/assets/glow/cissy-left.gltf"></a-asset-item>
+              <a-asset-item id="cissy-right-gltf" src="/assets/glow/cissy-right.gltf"></a-asset-item>
+              
+              <!-- sally-->
+              <a-asset-item id="sally-head-gltf" src="/assets/glow/sally-head.gltf"></a-asset-item>
+              <a-asset-item id="sally-left-gltf" src="/assets/glow/sally-left.gltf"></a-asset-item>
+              <a-asset-item id="sally-right-gltf" src="/assets/glow/sally-right.gltf"></a-asset-item>
+              
+              
+              <!-- jess-->
+              <a-asset-item id="jess-head-gltf" src="/assets/glow/jess-head.gltf"></a-asset-item>
+              <a-asset-item id="jess-head-gltf" src="/assets/glow/jess-left.gltf"></a-asset-item>
+              <a-asset-item id="jess-head-gltf" src="/assets/glow/jess-right.gltf"></a-asset-item>
+              
+              <a-asset-item id="sink-gltf" src="/assets/glow/bathroom-sink.gltf"></a-asset-item>
+              <a-asset-item id="mirror-gltf" src="/assets/glow/bathroom-mirror.gltf"></a-asset-item>
+              <a-asset-item id="toilet-gltf" src="/assets/glow/toilet.gltf"></a-asset-item>
+              <a-asset-item id="curtain-gltf" src="/assets/glow/curtain.gltf"></a-asset-item>
+          </a-assets>
+          
+          <a-link href="sonic.html" position="8 2.6 0.8" rotation="0 -90 0" scale="4 2 1" visible=false></a-link>
+          
+          <a-entity id="avatarCissy" class="avatar" scale="0.7 0.7 0.7">
+            <a-entity id="head" gltf-model="#cissy-head-gltf"  position="0 1 -6" rotation="0 -90 0" scale="0.01 0.01 0.01"></a-entity>
+<!--
+            <a-entity id="leftHand" gltf-model="#cissy-left-gltf"></a-entity>
+            <a-entity id="rightHand" gltf-model="#cissy-right-gltf"></a-entity>
+-->
+          </a-entity>
+          
+          <a-entity id="avatarJess" class="avatar" scale="0.7 0.7 0.7">
+                <a-entity id="head" gltf-model="#jess-head-gltf" position="4 7 0" rotation="-90 50 0" scale="0.01 0.01 0.01"></a-entity>
+<!--
+            <a-entity id="leftHand" gltf-model="#jess-left-gltf"></a-entity>
+            <a-entity id="rightHand" gltf-model="#jess-right-gltf"></a-entity>
+-->
+          </a-entity>
+          
+          <a-entity id="avatarSally" class="avatar" scale="0.5 0.5 0.5">
+                <a-entity id="head" gltf-model="#sally-head-gltf" position="1.76 -0.7 -0.26" rotation="0 -90 -50" scale="0.01 0.01 0.01"></a-entity>
+<!--
+            <a-entity id="leftHand" gltf-model="#sally-left-gltf"></a-entity>
+            <a-entity id="rightHand" gltf-model="#sally-right-gltf"></a-entity>
+-->
+          </a-entity>
+          
+          <a-entity id="toilet" gltf-model="#toilet-gltf" position="0 0 -4" rotation="-130 -40 0" scale="0.07 0.07 0.07"></a-entity>
+          
+          <a-entity id="mirror" gltf-model="#mirror-gltf" position="4 -4 -5.5" rotation="190 -10 20" scale="0.09 0.09 0.09"
+          sound="src: /assets/glow/glow.m4a; autoplay: true; refDistance: 5"></a-entity>
+          
+          <a-entity id="curtain" gltf-model="#curtain-gltf" position="1 6 -10" rotation="-90 0 0.349" scale="0.09 0.09 0.09"></a-entity>
+          <a-entity id="sink" gltf-model="#sink-gltf" position="3 0 -7" rotation="-120 -40 0" scale="0.1 0.1 0.1"></a-entity>
+          
+          <a-entity id="sink" gltf-model="#sink-gltf" position="5 0 -7" rotation="-120 -40 0" scale="0.1 0.1 0.1"></a-entity>
+          
+          <a-entity id="sink" gltf-model="#sink-gltf" position="7 0 -7" rotation="-120 -40 0" scale="0.1 0.1 0.1"></a-entity>
+        
+          <a-sky color="#ffe0e6"></a-sky>
+      </a-scene>
+  </body>
+</html>

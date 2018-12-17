@@ -1,0 +1,18 @@
+# MTL
+
+newmtl Layer_1_mtl
+	map_Kd kay-window_Layer_1.png
+
+
+newmtl Layer_2_mtl
+	map_Kd kay-window_Layer_2.png
+
+
+newmtl Layer_3_mtl
+	map_Kd kay-window_Layer_3.png
+
+
+newmtl Layer_4_mtl
+	map_Kd kay-window_Layer_4.png
+
+

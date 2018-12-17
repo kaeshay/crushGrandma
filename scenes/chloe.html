@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Emo Corner</title>
+    <meta name="description" content="replaying chloe">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="/components/grab.js"></script>
+    <script src="/components/aabb-collider.js"></script>
+    <script src="/components/custom-controls.js"></script>
+      <script src="/components/motion-capture.js"></script>
+    <script src="https://unpkg.com/aframe-joysticks-movement-component@0.1.2/dist/aframe-joysticks-movement-component.js"></script>
+    <script src="https://unpkg.com/aframe-mirror-component/dist/aframe-mirror-component.min.js"></script> 
+  </head>
+  <body>
+      <a-scene raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse">
+          <a-assets>
+              <a-asset-item id="chloe-head-gltf" src="/assets/chloe/chloe-head.gltf"></a-asset-item>
+              <a-asset-item id="chloe-left-gltf" src="/assets/chloe/chloe-left.gltf"></a-asset-item>
+              <a-asset-item id="chloe-right-gltf" src="/assets/chloe/chloe-right.gltf"></a-asset-item>
+              <a-asset-item id="disco-gltf" src="/assets/chloe/disco.gltf"></a-asset-item>
+              <a-asset-item id="tear-gltf" src="/assets/chloe/tear.gltf"></a-asset-item>
+              <a-asset-item id="door-gltf" src="/assets/chloe/chloe-door.gltf"></a-asset-item>
+              <a-asset-item id="cockblocker-gltf" src="/assets/chloe/cockblocker.gltf"></a-asset-item>
+          </a-assets>
+          
+          <a-link href="glow.html" position="0.2 0.02 7.5" rotation="0 0 0" scale="1 1 1" visible="false"></a-link>
+          
+          <a-entity id="spectatorRig" position="8 -.6 6.788" rotation="0 40 0">
+              <a-camera></a-camera>
+          </a-entity>
+          
+          <a-entity id="avatarChloe" position="1.8 -0.1 -2">
+              <a-entity id= "avatarRig" position="-1 0.5 -1.5" rotation="0 210 0">
+<!--                   <a-camera />-->
+              </a-entity>
+              <a-entity id="chloe-head" 
+                        gltf-model="#chloe-head-gltf"
+                        rotation="-120 0 30" scale="0.03 0.03 0.03" 
+                        scale="0.03 0.03 0.03"></a-entity>
+              <a-entity id="rightHand" custom-controls="hand: right; model: #chloe-right-gltf" 
+                      aabb-collider="objects: .grabbable;" grab 
+                      rotation="-220 -10 90" scale="0.03 0.03 0.03"></a-entity>
+              <a-entity id="leftHand" custom-controls="hand: left; model: #chloe-left-gltf" 
+                      aabb-collider="objects: .grabbable;" grab
+                      rotation="180 90 0" scale="0.03 0.03 0.03"></a-entity>
+              <!-- tears-->
+              <a-entity id="tear1" gltf-model="#tear-gltf" position="2.863 4.424 4.862" scale="0.06 0.06 0.06">
+                  <a-animation attribute="position" dur="7000" easing="linear" repeat="indefinite" to="0 1 0"></a-animation>
+              </a-entity>     
+              <a-entity id="tear2" gltf-model="#tear-gltf" position="2.598 4.5 4.9" scale="0.06 0.06 0.06">
+                  <a-animation attribute="position" dur="5000" easing="linear" repeat="indefinite" to="0 0.5 0"></a-animation>
+              </a-entity>
+              <a-entity id="tear3" gltf-model="#tear-gltf" position="2.476 4.5 4.893" scale="0.06 0.06 0.06">
+                  <a-animation attribute="position" dur="3000" easing="linear" repeat="indefinite" to="0 0 0"></a-animation>
+              </a-entity>
+          </a-entity>
+          
+          <a-entity id="disco" gltf-model="#disco-gltf" position="4 5 2" rotation="0 0 -90" scale="0.03 0.03 0.03"
+          sound="src: /assets/chloe/lucky.mp3; autoplay: true">
+              <a-light type="directional" angle="0" intensity="1.4" position="24.266 -35.175 41.628">
+               <a-animation attribute="color" from="#f48942" to="#bda8ff" direction="alternate" dur="500" repeat="indefinite" easing="linear"></a-animation>
+              </a-light>        
+              <a-animation attribute="rotation"
+                       dur="5000"
+                       fill="forwards"
+                       to="0 360 -90"
+                       repeat="indefinite">
+                  </a-animation>  
+          </a-entity>
+          
+          <a-entity id="door" gltf-model="#door-gltf" position="-6.977 8.652 7.816" rotation="10 20 -50" scale="0.1 0.1 0.1"></a-entity>
+          
+          <a-entity id="cockblocker" gltf-model="#cockblocker-gltf" rotation="-90 180 0" scale="0.04 0.04 0.04" position="2.773 0.589 7.14"></a-entity>
+          
+          <a-light type="ambient" intensity="1"></a-light>
+          <a-sky color="#84a59c"></a-sky>
+      </a-scene>
+  </body>
+</html>

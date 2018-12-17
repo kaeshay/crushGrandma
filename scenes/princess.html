@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Princess Time</title>
+    <meta name="description" content="replaying princesses">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="/components/grab.js"></script>
+    <script src="/components/aabb-collider.js"></script>
+    <script src="/components/custom-controls.js"></script>
+    <script src="/components/motion-capture.js"></script>
+    <script src="https://unpkg.com/aframe-joysticks-movement-component@0.1.2/dist/aframe-joysticks-movement-component.js"></script>
+    <script src="https://unpkg.com/aframe-mirror-component/dist/aframe-mirror-component.min.js"></script> 
+    <script src="https://unpkg.com/aframe-click-drag-component"></script>
+  </head>
+  <body>
+      <a-scene raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse">
+          <a-assets>
+              <a-asset-item id="ledge-gltf" src="/assets/princess/ledge.gltf"></a-asset-item>
+              <a-asset-item id="stool-gltf" src="/assets/princess/stool.gltf"></a-asset-item>
+              <a-asset-item id="dress1-gltf" src="/assets/princess/dress1.gltf"></a-asset-item>
+              <a-asset-item id="dress2-gltf" src="/assets/princess/dress2.gltf"></a-asset-item>
+              <a-asset-item id="mirror-gltf" src="/assets/princess/mirror.gltf"></a-asset-item>
+              <a-asset-item id="door-gltf" src="/assets/princess/princess-door.gltf"></a-asset-item>
+              <!-- kayla-->
+              <a-asset-item id="kayla-head-gltf" src="/assets/princess/kayla-head.gltf"></a-asset-item>
+              <a-asset-item id="kayla-left-gltf" src="/assets/princess/kayla-left.gltf"></a-asset-item>
+              <a-asset-item id="kayla-right-gltf" src="/assets/princess/kayla-right.gltf"></a-asset-item>
+              <!-- camille-->
+              <a-asset-item id="camille-head-gltf" src="/assets/princess/camille-head.gltf"></a-asset-item>
+              <a-asset-item id="camille-left-gltf" src="/assets/princess/camille-left.gltf"></a-asset-item>
+              <a-asset-item id="camille-right-gltf" src="/assets/princess/camille-right.gltf"></a-asset-item>
+              <!-- sam-->
+              <a-asset-item id="sam-head-gltf" src="/assets/princess/sam-head.gltf"></a-asset-item>
+              <!-- milly-->
+              <a-asset-item id="milly-head-gltf" src="/assets/princess/milly-head.gltf"></a-asset-item>
+          </a-assets>
+          
+           <a-link href="rachel.html" position="-0.5 1.3 0.1" rotation="0 50 0" scale="2 3 1" visible="false"></a-link>
+          
+          <a-entity position="-1 2 -11" rotation="0 140 0">
+              <a-camera></a-camera>
+          </a-entity>
+          
+          <a-entity id="avatarKayla" class="avatar" position="-5.126 0 -4.03" rotation="-80 0 0">
+            <a-entity id="kayla-head" gltf-model="#kayla-head-gltf" rotation="0 20 0"  position="0 0 4" scale="0.05 0.05 0.05"></a-entity>
+            <a-entity id="leftHand" custom-controls="hand:left; model: #kayla-left-gltf" rotation="-40 -50 30" scale="0.03 0.03 0.03"></a-entity>      
+            <a-entity id="rightHand" custom-controls="hand:right; model:#kayla-right-gltf" rotation="0 0 180" scale="0.03 0.03 0.03" position="-0.417 -7.364 4.367"></a-entity>
+          </a-entity>
+          
+         <a-entity id="avatarCamille" class="avatar" position="0 1 0">
+            <a-entity id="camille-head" gltf-model="#camille-head-gltf" rotation="-90 0 0" scale="0.05 0.05 0.05" position="-3.637 2.579 -10.479"></a-entity>
+          </a-entity>
+          
+          <a-entity id="avatarMilly" class="avatar" position="0 1 0">
+            <a-entity id="head" gltf-model="#milly-head-gltf" rotation="-0.698 -0.873 0.524" scale="0.05 0.05 0.05" position="-5.021 2.178 -7.198"></a-entity>
+          </a-entity>
+          
+          <a-entity id="ledge" gltf-model="#ledge-gltf" position="-11.84 1 -9" rotation="-90 39.84 0" scale="0.1 0.1 0.1"></a-entity>
+          
+          <a-entity id="dress1" gltf-model="#dress1-gltf" position="-11.84 1 -9" rotation="-90 39.84 0" scale="0.1 0.1 0.1"></a-entity>
+          
+          <a-entity id="dress2" gltf-model="#dress2-gltf" position="-11.84 1 -9" rotation="-90 39.84 0" scale="0.1 0.1 0.1"></a-entity>
+    
+          <a-entity id="stool" gltf-model="#stool-gltf" position="-9 3 -10" rotation="-90 39.84 0" scale="0.1 0.1 0.1"
+                    sound="src: /assets/princess/princess.mp3; autoplay: true; refDistance: 7"></a-entity>
+          
+          <a-entity id="mirror" gltf-model="#mirror-gltf" position="-11.84 0 -9" rotation="-100 39.84 0" scale="0.1 0.1 0.1"></a-entity>
+          
+          <a-entity id="door" gltf-model="#door-gltf" position="-11.58 -1 -8.04" rotation="100 -90 0" scale="0.1 0.1 0.1"></a-entity>
+          
+          <a-sky color="#fffed6"></a-sky>
+          <a-light type="ambient" intensity="1.2"></a-light>
+      </a-scene>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+# MTL
+
+newmtl Layer_2_mtl
+	map_Kd glass-door_Layer_2.png
+
+
